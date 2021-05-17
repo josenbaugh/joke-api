@@ -1,6 +1,5 @@
-CREATE DATABASE IF NOT EXISTS dev;
-CREATE DATABASE IF NOT EXISTS test;
-USE dev;
+CREATE DATABASE IF NOT EXISTS docker_sf;
+USE docker_sf;
 
 drop table if exists ApiConfiguration;
 create table ApiConfiguration(

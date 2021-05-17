@@ -25,7 +25,6 @@ services:
     # as action arguments even if you don't extend any base controller class
     App\Controller\:
         resource: '../src/Controller/'
- # explicitly configure the service
     App\Controller\AppController:
         tags: [controller.service_arguments]
         bind:

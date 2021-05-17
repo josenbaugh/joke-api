@@ -24,7 +24,7 @@ services:
   db: #address
     image: mysql:5.7
     ports:
-      - "3317:3306" #outside:inside docker container from-within
+      - "3306:3306" #outside:inside docker container from-within
     environment:
       - MYSQL_DATABASE=docker_sf
       - MYSQL_ROOT_PASSWORD=root
