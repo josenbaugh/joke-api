@@ -18,5 +18,5 @@ This will take a while the first time you run it.
 Once the docker containers are up and running the api will be available:
 
 ```
-http://localhost:8000/joke/random
+curl http://localhost:8000/joke/random
 ```
