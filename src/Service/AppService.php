@@ -53,13 +53,15 @@ class AppService
 	 * @throws VendorApiException
      * @return array
      */
-    public function getJoke(): array
+    public function getJoke(): string
     {
 		$this->applyBlacklist($this->jokeService);
 
 		$joke = $this->jokeService->getExternalDevJoke();
 
-        return $joke;
+		return $joke['type'] == 'single' ?
+			$joke['joke'] :
+			$joke['setup'] . "\r\n" . $joke['delivery'];
     } // End function getJoke
 
 	/**
