@@ -8,24 +8,56 @@ use App\Exception\VendorApiException;
 
 class JokeApiWrapper
 {
+	/**
+	 * client 
+	 *
+	 * @var HttpClientInterface
+	 * @access private
+	 */
 	private $client;
+
+	/**
+	 * baseUrl 
+	 *
+	 * @var string
+	 * @access private
+	 */
 	private $baseUrl;
 
+	/**
+	 * Constructor
+	 *
+	 * @param HttpClientInterface $client
+	 * @access public
+	 */
 	public function __construct(HttpClientInterface $client) {
         $this->client = $client;
 		$this->baseUrl = 'https://v2.jokeapi.dev/joke/Programming?format=xml';
 		// $this->baseUrl = 'https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&format=xml';
 
-	}
+	} // End function Constructor
 	
+	/**
+	 * getUrl
+	 *
+	 * @access public
+	 * @return string
+	 */
 	public function getUrl(): string {
 		return $this->baseUrl;
-	}
+	} // End function getUrl
 
+	/**
+	 * setUrl
+	 *
+	 * @param string $url
+	 * @access public
+	 * @return string
+	 */
 	public function setUrl($url): string {
 		$this->baseUrl = $url;
 		return $this->baseUrl;
-	}
+	} // End function setUrl
 
     /**
      * getExternalDevJoke
